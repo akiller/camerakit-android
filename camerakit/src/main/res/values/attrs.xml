@@ -3,7 +3,22 @@
 
     <declare-styleable name="CameraView">
 
-        <attr name="ckFacing" format="enum">
+        <!-- Should the view handle layout_width or layout_height set as wrap_content. -->
+        <attr name="android:adjustViewBounds" />
+
+        <!-- Aspect ratio to force the view to measure to. Depends on a adjustViewBounds and
+             having one dimension set as wrap_content. -->
+        <attr name="camera_aspectRatio" format="float" />
+
+        <!-- Default camera api to use. -->
+        <attr name="camera_apiVersion" format="enum">
+            <enum name="auto" value="0" />
+            <enum name="camera1" value="1" />
+            <enum name="camera2" value="2" />
+        </attr>
+
+        <!-- Default camera orientation to use. -->
+        <attr name="camera_facing" format="enum">
             <enum name="back" value="0" />
             <enum name="front" value="1" />
         </attr>
